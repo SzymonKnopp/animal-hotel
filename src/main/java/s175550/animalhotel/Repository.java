@@ -2,12 +2,13 @@ package s175550.animalhotel;
 
 import lombok.AllArgsConstructor;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
 
 @AllArgsConstructor
-public class Repository<ItemType extends ClassCopyableBySerialization<ItemType>> {
+public class Repository<ItemType extends Serializable> {
     private final HashMap<Integer, ItemType> storage;
 
     public void add(Integer key, ItemType entity) throws IllegalArgumentException {
@@ -17,17 +18,17 @@ public class Repository<ItemType extends ClassCopyableBySerialization<ItemType>>
         storage.put(key, entity);
     }
 
-    Optional<ItemType> get(Integer key) {
-        return Optional.ofNullable(storage.get(key).deepCopy()); //TODO: check if deepCopy works fine
+    public Optional<ItemType> get(Integer key) {
+        return Optional.ofNullable(CloningUtility.clone(storage.get(key)));
     }
 
-    ArrayList<ItemType> getAll() {
+    public ArrayList<ItemType> getAll() {
         ArrayList<ItemType> result = new ArrayList<>();
-        storage.values().forEach(item -> result.add(item.deepCopy())); //TODO: check if deepCopy works fine
+        storage.values().forEach(item -> result.add(CloningUtility.clone(item)));
         return result;
     }
 
-    void delete(Integer key) {
+    public void delete(Integer key) {
         storage.remove(key);
     }
 }

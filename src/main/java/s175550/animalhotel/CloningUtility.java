@@ -2,7 +2,6 @@ package s175550.animalhotel;
 
 import java.io.*;
 
-//TODO: Check if ClassCopyableBySerialization works fine. If so, delete this one.
 public class CloningUtility {
     @SuppressWarnings("unchecked")
     public static <T extends Serializable> T clone(T objectToCopy) {

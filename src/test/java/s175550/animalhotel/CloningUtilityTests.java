@@ -8,16 +8,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.io.Serializable;
 
 @SpringBootTest
-class ClassCopyableBySerializationTests {
+class CloningUtilityTests {
     @AllArgsConstructor
-    class TestClass extends ClassCopyableBySerialization<TestClass> implements Serializable {
+    static
+    class TestClass implements Serializable {
         private boolean hasChanged;
     }
 
     @Test
     void when_originalChanged_expect_deepCopyNotToChange() {
         TestClass original = new TestClass(false);
-        TestClass deepCopy = original.deepCopy();
+        TestClass deepCopy = CloningUtility.clone(original);
 
         original.hasChanged = true;
 

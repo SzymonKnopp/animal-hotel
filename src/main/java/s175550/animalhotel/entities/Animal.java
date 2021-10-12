@@ -2,11 +2,12 @@ package s175550.animalhotel.entities;
 
 import lombok.Builder;
 import lombok.Getter;
-import s175550.animalhotel.ClassCopyableBySerialization;
+
+import java.io.Serializable;
 
 @Builder
 @Getter
-public class Animal extends ClassCopyableBySerialization<Animal> {
+public class Animal implements Serializable {
     private final String name;
     private final Species species;
     private final Gender gender;
