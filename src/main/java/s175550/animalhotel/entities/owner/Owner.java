@@ -1,7 +1,8 @@
-package s175550.animalhotel.entities;
+package s175550.animalhotel.entities.owner;
 
 import lombok.Builder;
 import lombok.Getter;
+import s175550.animalhotel.entities.Gender;
 
 import java.io.Serializable;
 
