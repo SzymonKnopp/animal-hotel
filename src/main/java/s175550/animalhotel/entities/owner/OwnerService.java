@@ -1,14 +1,14 @@
 package s175550.animalhotel.entities.owner;
 
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
+import s175550.animalhotel.Service;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
-@Service
+@org.springframework.stereotype.Service
 @AllArgsConstructor
-public class OwnerService {
+public class OwnerService implements Service<Owner> {
     private final OwnerRepository repository;
 
     public void add(Integer key, Owner owner) throws IllegalArgumentException {
