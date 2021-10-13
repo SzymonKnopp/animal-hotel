@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 
 @org.springframework.stereotype.Repository
 public class AnimalRepository extends Repository<Animal> {
-    public AnimalRepository() {
-        super(Storage.animals);
+    public AnimalRepository(Storage storage) {
+        super(storage.getAnimals());
     }
 
     public List<Animal> getAllOwnedBy(Owner owner) {

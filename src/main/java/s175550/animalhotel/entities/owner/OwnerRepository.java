@@ -6,7 +6,7 @@ import s175550.animalhotel.Storage;
 
 @org.springframework.stereotype.Repository
 public class OwnerRepository extends Repository<Owner> {
-    public OwnerRepository() {
-        super(Storage.owners);
+    public OwnerRepository(Storage storage) {
+        super(storage.getOwners());
     }
 }
