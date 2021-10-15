@@ -22,6 +22,7 @@ public class DataInitializer {
         owners.put(2, Owner.builder().name("Nataluś").surname("Jensko").gender(Gender.FEMALE).build());
         owners.put(3, Owner.builder().name("Nataluś").surname("Cyrklaff").gender(Gender.FEMALE).build());
         owners.put(4, Owner.builder().name("Bognuś").surname("Gondek").gender(Gender.FEMALE).build());
+        owners.put(5, Owner.builder().name("Krzysiunio").surname("Mężczyzna").gender(Gender.MALE).build());
 
         animals.put(0, Animal.builder().name("Bonifacy").species(Species.CAT).gender(Gender.MALE).owner(owners.get(4)).build());
         animals.put(1, Animal.builder().name("Bolesław Krzywousty").species(Species.WOMBAT).gender(Gender.MALE).owner(owners.get(0)).build());

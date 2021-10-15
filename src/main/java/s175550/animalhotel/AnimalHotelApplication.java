@@ -8,6 +8,7 @@ public class AnimalHotelApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(AnimalHotelApplication.class, args);
+
     }
 
 }
