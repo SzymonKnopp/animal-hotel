@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 @org.springframework.stereotype.Repository
@@ -31,5 +32,11 @@ public class Repository<EntityType extends Serializable> {
 
     public void delete(Integer key) {
         storage.remove(key);
+    }
+
+    public void delete(EntityType entityToDelete) {
+        storage.entrySet().stream()
+                .filter(entry -> entry.getValue().equals(entityToDelete))
+                .forEach(entry -> this.delete(entry.getKey()));
     }
 }

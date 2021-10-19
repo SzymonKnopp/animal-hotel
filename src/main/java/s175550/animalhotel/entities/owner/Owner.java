@@ -12,12 +12,13 @@ import java.util.Scanner;
 @AllArgsConstructor (access = AccessLevel.PRIVATE)
 @Getter
 @ToString
+@EqualsAndHashCode
 public class Owner implements Serializable {
     private final String name;
     private final String surname;
     private final Gender gender;
 
-    public Owner createOwnerFromUI(UserInterface ui) throws NumberFormatException {
+    public static Owner createOwnerFromUI(UserInterface ui) throws NumberFormatException {
         Scanner scanner = ui.getScanner();
         PrintStream print = ui.getPrint();
 

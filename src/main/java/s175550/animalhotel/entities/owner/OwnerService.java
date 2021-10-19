@@ -12,6 +12,10 @@ import java.util.Optional;
 public class OwnerService implements Service<Owner> {
     private final OwnerRepository repository;
 
+    public void add(Owner owner) {
+        this.add(this.getAll().size(), owner);
+    }
+
     public void add(Integer key, Owner owner) throws IllegalArgumentException {
         repository.add(key, owner);
     }
@@ -28,10 +32,14 @@ public class OwnerService implements Service<Owner> {
         repository.delete(key);
     }
 
+    public void delete(Owner ownerToDelete) {
+        repository.delete(ownerToDelete);
+    }
+
     public Owner ownerFromUI(UserInterface ui) throws NumberFormatException {
         ArrayList<Owner> owners = this.getAll();
         for (int i = 0; i < owners.size(); i++) {
-            ui.getPrint().println(i + ". " + owners.get(i).toString());
+            ui.getPrint().println((i + 1) + " - " + owners.get(i).toString());
         }
         int index = Integer.parseInt(ui.getScanner().nextLine()) - 1;
         if (index < 0 || index >= owners.size()) {

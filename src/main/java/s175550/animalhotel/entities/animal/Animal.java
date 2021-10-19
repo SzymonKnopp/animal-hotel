@@ -13,6 +13,7 @@ import java.io.Serializable;
 @AllArgsConstructor (access = AccessLevel.PRIVATE)
 @Getter
 @ToString
+@EqualsAndHashCode
 public class Animal implements Serializable {
     private final String name;
     private final Species species;

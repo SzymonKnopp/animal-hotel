@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 public interface Service<EntityType extends Serializable> {
+    void add(EntityType entity);
+
     void add(Integer key, EntityType entity);
 
     Optional<EntityType> get(Integer key);
@@ -12,4 +14,6 @@ public interface Service<EntityType extends Serializable> {
     ArrayList<EntityType> getAll();
 
     void delete(Integer key);
+
+    void delete(EntityType entity);
 }
