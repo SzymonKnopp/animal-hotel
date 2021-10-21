@@ -9,6 +9,8 @@ import s175550.animalhotel.entities.owner.Owner;
 import s175550.animalhotel.entities.owner.OwnerRepository;
 import s175550.animalhotel.entities.owner.OwnerService;
 
+import java.util.List;
+
 @Component
 public class AppRunner implements CommandLineRunner {
     public enum EntityClass {
@@ -35,7 +37,7 @@ public class AppRunner implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         Storage storage = new Storage();
         DataInitializer.initializeData(storage);
 
@@ -84,6 +86,8 @@ public class AppRunner implements CommandLineRunner {
                             case OWNER: {
                                 Owner toDelete = ownerService.ownerFromUI(ui);
                                 ownerService.delete(toDelete);
+                                List<Animal> animalsToDelete = animalService.getAllOwnedBy(toDelete);
+                                animalsToDelete.forEach(animalService::delete);
                                 break;
                             }
                             case ANIMAL: {

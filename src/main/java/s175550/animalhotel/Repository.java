@@ -3,10 +3,8 @@ package s175550.animalhotel;
 import lombok.AllArgsConstructor;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @org.springframework.stereotype.Repository
 @AllArgsConstructor
@@ -35,8 +33,11 @@ public class Repository<EntityType extends Serializable> {
     }
 
     public void delete(EntityType entityToDelete) {
-        storage.entrySet().stream()
+        List<Integer> keysToDelete = storage.entrySet().stream()
                 .filter(entry -> entry.getValue().equals(entityToDelete))
-                .forEach(entry -> this.delete(entry.getKey()));
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+
+        if (keysToDelete.size() == 1) this.delete(keysToDelete.get(0));
     }
 }

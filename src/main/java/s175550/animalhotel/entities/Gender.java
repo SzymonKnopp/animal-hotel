@@ -15,7 +15,7 @@ public enum Gender {
         return Gender.values()[index];
     }
 
-    private static String optionsToString() {//TODO: try to loop-ify or check lombok's toString
+    private static String optionsToString() {
         return  "1 - Male\n" +
                 "2 - Female\n";
     }
