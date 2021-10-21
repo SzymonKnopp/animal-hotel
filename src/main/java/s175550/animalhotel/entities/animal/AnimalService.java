@@ -13,35 +13,30 @@ import java.util.Optional;
 @AllArgsConstructor
 public class AnimalService implements Service<Animal> {
     private final AnimalRepository repository;
-
-    public void add(Animal animal) {
-        this.add(this.getAll().size(), animal);
+    public void save(Animal animal){
+        repository.save(animal);
     }
 
-    public void add(Integer key, Animal animal) throws IllegalArgumentException {
-        repository.add(key, animal);
+    public Optional<Animal> find(Integer id) {
+        return repository.findById(id);
     }
 
-    public Optional<Animal> get(Integer key) {
-        return repository.get(key);
-    }
-
-    public ArrayList<Animal> getAll() {
-        return repository.getAll();
+    public List<Animal> findAll() {
+        return repository.findAll();
     }
 
     public void delete(Integer key) {
-        repository.delete(key);
+        repository.deleteById(key);
     }
 
     public void delete(Animal animalToDelete) { repository.delete(animalToDelete);}
 
     public List<Animal> getAllOwnedBy(Owner owner) {
-        return repository.getAllOwnedBy(owner);
+        return repository.getAllByOwner(owner);
     }
 
     public Animal animalFromUI(UserInterface ui) throws NumberFormatException {
-        ArrayList<Animal> animals = this.getAll();
+        List<Animal> animals = this.findAll();
         for (int i = 0; i < animals.size(); i++) {
             ui.getPrint().println((i + 1) + " - " + animals.get(i).toString());
         }
