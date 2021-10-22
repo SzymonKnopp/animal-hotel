@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 public class GetAllAnimalsResponse {
     @AllArgsConstructor
     private static class SimpleAnimal {
+        private final int id;
         private final String name;
     }
 
@@ -18,8 +19,9 @@ public class GetAllAnimalsResponse {
 
     public static GetAllAnimalsResponse fromEntities(List<Animal> allAnimalEntities) {
         List<SimpleAnimal> allAnimals = allAnimalEntities.stream()
-                .map(ownerEntity -> new SimpleAnimal(
-                        ownerEntity.getName()
+                .map(animalEntity -> new SimpleAnimal(
+                        animalEntity.getId(),
+                        animalEntity.getName()
                 ))
                 .collect(Collectors.toList());
 

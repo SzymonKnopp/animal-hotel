@@ -1,6 +1,6 @@
 package s175550.animalhotel.entities.owner;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,14 +12,10 @@ import s175550.animalhotel.entities.owner.dto.GetOwnerResponse;
 import java.util.Optional;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("api/owners")
 public class OwnerController {
     private final OwnerService ownerService;
-
-    @Autowired //TODO: what if no autowired?
-    public OwnerController(OwnerService ownerService) {
-        this.ownerService = ownerService;
-    }
 
     @GetMapping
     public ResponseEntity<GetAllOwnersResponse> getAllOwners() {

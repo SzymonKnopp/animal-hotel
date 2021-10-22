@@ -2,9 +2,11 @@ package s175550.animalhotel.entities.owner.dto;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import s175550.animalhotel.entities.Gender;
 import s175550.animalhotel.entities.owner.Owner;
 
+@Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class GetOwnerResponse {
     private final String name;

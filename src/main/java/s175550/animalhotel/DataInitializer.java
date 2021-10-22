@@ -1,5 +1,6 @@
 package s175550.animalhotel;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import s175550.animalhotel.entities.Gender;
@@ -11,16 +12,11 @@ import s175550.animalhotel.entities.owner.OwnerService;
 
 import javax.annotation.PostConstruct;
 
+@AllArgsConstructor
 @Component
 public class DataInitializer {
     private final OwnerService ownerService;
     private final AnimalService animalService;
-
-    @Autowired //TODO: what if no Autowired?
-    public DataInitializer(OwnerService ownerService, AnimalService animalService) {
-        this.ownerService = ownerService;
-        this.animalService = animalService;
-    }
 
     @PostConstruct
     public void initialize() {
