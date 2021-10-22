@@ -1,7 +1,6 @@
 package s175550.animalhotel.entities.animal;
 
 import lombok.AllArgsConstructor;
-import s175550.animalhotel.Service;
 import s175550.animalhotel.entities.owner.Owner;
 
 import java.util.List;
@@ -9,7 +8,7 @@ import java.util.Optional;
 
 @org.springframework.stereotype.Service
 @AllArgsConstructor
-public class AnimalService implements Service<Animal> {
+public class AnimalService {
     private final AnimalRepository repository;
 
     public void save(Animal animal) {

@@ -1,15 +1,13 @@
 package s175550.animalhotel.entities.owner;
 
 import lombok.AllArgsConstructor;
-import s175550.animalhotel.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @org.springframework.stereotype.Service
 @AllArgsConstructor
-public class OwnerService implements Service<Owner> {
+public class OwnerService {
     private final OwnerRepository repository;
 
     public void save(Owner owner) {
