@@ -2,12 +2,12 @@ package s175550.animalhotel;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import s175550.animalhotel.entities.Gender;
-import s175550.animalhotel.entities.animal.Animal;
-import s175550.animalhotel.entities.animal.AnimalService;
-import s175550.animalhotel.entities.animal.Species;
-import s175550.animalhotel.entities.owner.Owner;
-import s175550.animalhotel.entities.owner.OwnerService;
+import s175550.animalhotel.model.Gender;
+import s175550.animalhotel.model.animal.Animal;
+import s175550.animalhotel.service.AnimalService;
+import s175550.animalhotel.model.animal.Species;
+import s175550.animalhotel.model.owner.Owner;
+import s175550.animalhotel.service.OwnerService;
 
 import javax.annotation.PostConstruct;
 

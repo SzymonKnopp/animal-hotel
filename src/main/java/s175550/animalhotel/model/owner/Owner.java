@@ -1,14 +1,12 @@
-package s175550.animalhotel.entities.owner;
+package s175550.animalhotel.model.owner;
 
 import lombok.*;
-import s175550.animalhotel.entities.Gender;
-import s175550.animalhotel.entities.animal.Animal;
+import s175550.animalhotel.model.Gender;
+import s175550.animalhotel.model.animal.Animal;
 
 import javax.persistence.*;
-import java.io.PrintStream;
 import java.io.Serializable;
 import java.util.List;
-import java.util.Scanner;
 
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

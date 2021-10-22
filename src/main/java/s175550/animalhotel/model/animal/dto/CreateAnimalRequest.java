@@ -1,10 +1,10 @@
-package s175550.animalhotel.entities.animal.dto;
+package s175550.animalhotel.model.animal.dto;
 
 import lombok.Builder;
-import s175550.animalhotel.entities.Gender;
-import s175550.animalhotel.entities.animal.Animal;
-import s175550.animalhotel.entities.animal.Species;
-import s175550.animalhotel.entities.owner.Owner;
+import s175550.animalhotel.model.Gender;
+import s175550.animalhotel.model.animal.Animal;
+import s175550.animalhotel.model.animal.Species;
+import s175550.animalhotel.model.owner.Owner;
 
 @Builder
 public class CreateAnimalRequest {

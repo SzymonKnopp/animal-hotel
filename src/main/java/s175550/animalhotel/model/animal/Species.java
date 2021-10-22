@@ -1,4 +1,4 @@
-package s175550.animalhotel.entities.animal;
+package s175550.animalhotel.model.animal;
 
 public enum Species {
     DOG,

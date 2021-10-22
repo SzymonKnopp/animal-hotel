@@ -1,11 +1,11 @@
-package s175550.animalhotel.entities.animal.dto;
+package s175550.animalhotel.model.animal.dto;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
-import s175550.animalhotel.entities.Gender;
-import s175550.animalhotel.entities.animal.Animal;
-import s175550.animalhotel.entities.animal.Species;
-import s175550.animalhotel.entities.owner.dto.GetOwnerResponse;
+import s175550.animalhotel.model.Gender;
+import s175550.animalhotel.model.animal.Animal;
+import s175550.animalhotel.model.animal.Species;
+import s175550.animalhotel.model.owner.dto.GetOwnerResponse;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class GetAnimalResponse {

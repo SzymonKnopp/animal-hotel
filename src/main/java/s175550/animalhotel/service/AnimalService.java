@@ -1,8 +1,10 @@
-package s175550.animalhotel.entities.animal;
+package s175550.animalhotel.service;
 
 import lombok.AllArgsConstructor;
 import s175550.animalhotel.Service;
-import s175550.animalhotel.entities.owner.Owner;
+import s175550.animalhotel.model.animal.Animal;
+import s175550.animalhotel.model.owner.Owner;
+import s175550.animalhotel.repository.AnimalRepository;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,7 +1,8 @@
-package s175550.animalhotel.entities.animal;
+package s175550.animalhotel.repository;
 
 import s175550.animalhotel.Repository;
-import s175550.animalhotel.entities.owner.Owner;
+import s175550.animalhotel.model.animal.Animal;
+import s175550.animalhotel.model.owner.Owner;
 
 import java.util.List;
 

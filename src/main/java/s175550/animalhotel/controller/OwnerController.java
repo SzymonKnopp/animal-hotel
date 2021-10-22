@@ -1,4 +1,4 @@
-package s175550.animalhotel.entities.owner;
+package s175550.animalhotel.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import s175550.animalhotel.entities.owner.dto.GetAllOwnersResponse;
-import s175550.animalhotel.entities.owner.dto.GetOwnerResponse;
+import s175550.animalhotel.model.owner.Owner;
+import s175550.animalhotel.model.owner.dto.GetAllOwnersResponse;
+import s175550.animalhotel.model.owner.dto.GetOwnerResponse;
+import s175550.animalhotel.service.OwnerService;
 
 import java.util.Optional;
 

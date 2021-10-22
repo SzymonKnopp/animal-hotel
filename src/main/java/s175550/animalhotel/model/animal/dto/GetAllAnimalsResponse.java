@@ -1,8 +1,8 @@
-package s175550.animalhotel.entities.animal.dto;
+package s175550.animalhotel.model.animal.dto;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
-import s175550.animalhotel.entities.animal.Animal;
+import s175550.animalhotel.model.animal.Animal;
 
 import java.util.List;
 import java.util.stream.Collectors;

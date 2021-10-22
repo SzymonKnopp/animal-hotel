@@ -1,7 +1,7 @@
-package s175550.animalhotel.entities.owner.dto;
+package s175550.animalhotel.model.owner.dto;
 
 import lombok.Builder;
-import s175550.animalhotel.entities.Gender;
+import s175550.animalhotel.model.Gender;
 
 @Builder
 public class UpdateOwnerRequest {
