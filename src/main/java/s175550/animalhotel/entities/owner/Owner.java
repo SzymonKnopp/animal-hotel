@@ -2,16 +2,42 @@ package s175550.animalhotel.entities.owner;
 
 import lombok.*;
 import s175550.animalhotel.entities.Gender;
+import s175550.animalhotel.entities.animal.Animal;
 
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Builder
-@AllArgsConstructor (access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 @ToString
-@EqualsAndHashCode
+
+@Entity
+@Table(name = "owners")
 public class Owner implements Serializable {
-    private final String name;
-    private final String surname;
-    private final Gender gender;
+    @ToString.Exclude
+    @Id
+    @GeneratedValue
+    private Integer id;
+
+    private String name;
+
+    private String surname;
+
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+
+    @ToString.Exclude
+    @OneToMany(mappedBy = "owner")
+    @Column(name = "owned_animals")
+    private List<Animal> ownedAnimals;
+
+
+    private Owner(String name, String surname, Gender gender) {
+        this.name = name;
+        this.surname = surname;
+        this.gender = gender;
+    }
 }
