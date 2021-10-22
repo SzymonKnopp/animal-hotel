@@ -16,5 +16,7 @@ public class Storage {
     public Storage() {
         owners = new HashMap<>();
         animals = new HashMap<>();
+
+        DataInitializer.initializeData(this);
     }
 }

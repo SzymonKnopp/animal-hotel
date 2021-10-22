@@ -1,5 +1,6 @@
 package s175550.animalhotel;
 
+import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import s175550.animalhotel.entities.animal.Animal;
@@ -11,8 +12,12 @@ import s175550.animalhotel.entities.owner.OwnerService;
 
 import java.util.List;
 
+@AllArgsConstructor
 @Component
 public class AppRunner implements CommandLineRunner {
+    private final OwnerService ownerService;
+    private final AnimalService animalService;
+
     public enum EntityClass {
         OWNER,
         ANIMAL;
@@ -38,15 +43,9 @@ public class AppRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        Storage storage = new Storage();
-        DataInitializer.initializeData(storage);
-
-        OwnerService ownerService = new OwnerService(new OwnerRepository(storage));
-        AnimalService animalService = new AnimalService(new AnimalRepository(storage));
-
         UserInterface ui = new UserInterface(System.out, System.in);
 
-        loopUserInteractionUntilExit(ui, ownerService, animalService);
+        loopUserInteractionUntilExit(ui, this.ownerService, this.animalService);
     }
 
     private void loopUserInteractionUntilExit(UserInterface ui, OwnerService ownerService, AnimalService animalService) {

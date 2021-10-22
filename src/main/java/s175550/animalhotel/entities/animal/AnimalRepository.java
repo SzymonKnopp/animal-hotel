@@ -1,5 +1,6 @@
 package s175550.animalhotel.entities.animal;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import s175550.animalhotel.Repository;
 import s175550.animalhotel.Storage;
 import s175550.animalhotel.entities.owner.Owner;
@@ -9,6 +10,7 @@ import java.util.stream.Collectors;
 
 @org.springframework.stereotype.Repository
 public class AnimalRepository extends Repository<Animal> {
+    @Autowired
     public AnimalRepository(Storage storage) {
         super(storage.getAnimals());
     }
