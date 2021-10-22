@@ -1,8 +1,9 @@
 package s175550.animalhotel.entities.owner;
 
-import s175550.animalhotel.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-@org.springframework.stereotype.Repository
-public interface OwnerRepository extends Repository<Owner> {
+@Repository
+public interface OwnerRepository extends JpaRepository<Owner, Integer> {
 
 }

@@ -1,11 +1,12 @@
 package s175550.animalhotel.entities.animal;
 
-import s175550.animalhotel.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import s175550.animalhotel.entities.owner.Owner;
 
 import java.util.List;
 
-@org.springframework.stereotype.Repository
-public interface AnimalRepository extends Repository<Animal> {
+@Repository
+public interface AnimalRepository extends JpaRepository<Animal, Integer> {
     List<Animal> getAllByOwner(Owner owner);
 }
