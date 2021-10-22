@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 public interface Service<EntityType extends Serializable> {
-    void add(EntityType entity);
+    void save(EntityType entity);
 
-    void add(Integer key, EntityType entity);
+    void save(Integer key, EntityType entity);
 
     Optional<EntityType> get(Integer key);
 

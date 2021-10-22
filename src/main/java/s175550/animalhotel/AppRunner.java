@@ -4,10 +4,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import s175550.animalhotel.entities.animal.Animal;
-import s175550.animalhotel.entities.animal.AnimalRepository;
 import s175550.animalhotel.entities.animal.AnimalService;
 import s175550.animalhotel.entities.owner.Owner;
-import s175550.animalhotel.entities.owner.OwnerRepository;
 import s175550.animalhotel.entities.owner.OwnerService;
 
 import java.util.List;
@@ -71,8 +69,8 @@ public class AppRunner implements CommandLineRunner {
                     case ADD_NEW_ENTITY: {
                         ui.displayMessage("Choose category of entity to add:");
                         switch (EntityClass.entityClassFromUI(ui)) {
-                            case OWNER: ownerService.add(Owner.createOwnerFromUI(ui)); break;
-                            case ANIMAL: animalService.add(Animal.createAnimalFromUI(ui, ownerService)); break;
+                            case OWNER: ownerService.save(Owner.createOwnerFromUI(ui)); break;
+                            case ANIMAL: animalService.save(Animal.createAnimalFromUI(ui, ownerService)); break;
                             default: throw new IllegalStateException("unhandled enum value present");
                         }
                         ui.displayMessage("Successfully added new entity.");

@@ -12,11 +12,11 @@ import java.util.Optional;
 public class OwnerService implements Service<Owner> {
     private final OwnerRepository repository;
 
-    public void add(Owner owner) {
-        this.add(this.getAll().size(), owner);
+    public void save(Owner owner) {
+        this.save(this.getAll().size(), owner);
     }
 
-    public void add(Integer key, Owner owner) throws IllegalArgumentException {
+    public void save(Integer key, Owner owner) throws IllegalArgumentException {
         repository.add(key, owner);
     }
 

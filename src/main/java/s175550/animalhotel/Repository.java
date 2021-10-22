@@ -7,9 +7,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @org.springframework.stereotype.Repository
-@AllArgsConstructor
 public class Repository<EntityType extends Serializable> {
     protected final HashMap<Integer, EntityType> storage;
+
+    public Repository() {
+        storage = new HashMap<>();
+    }
 
     public void add(Integer key, EntityType entity) throws IllegalArgumentException {
         if(storage.containsKey(key)) {

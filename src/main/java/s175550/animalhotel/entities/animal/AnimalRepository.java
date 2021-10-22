@@ -1,19 +1,15 @@
 package s175550.animalhotel.entities.animal;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.NoArgsConstructor;
 import s175550.animalhotel.Repository;
-import s175550.animalhotel.Storage;
 import s175550.animalhotel.entities.owner.Owner;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@NoArgsConstructor
 @org.springframework.stereotype.Repository
 public class AnimalRepository extends Repository<Animal> {
-    @Autowired
-    public AnimalRepository(Storage storage) {
-        super(storage.getAnimals());
-    }
 
     public List<Animal> getAllOwnedBy(Owner owner) {
         return this.getAll().stream().filter(animal -> animal.getOwner().equals(owner)).collect(Collectors.toList());

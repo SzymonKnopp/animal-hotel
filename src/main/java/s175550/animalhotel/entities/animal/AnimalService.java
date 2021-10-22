@@ -14,11 +14,11 @@ import java.util.Optional;
 public class AnimalService implements Service<Animal> {
     private final AnimalRepository repository;
 
-    public void add(Animal animal) {
-        this.add(this.getAll().size(), animal);
+    public void save(Animal animal) {
+        this.save(this.getAll().size(), animal);
     }
 
-    public void add(Integer key, Animal animal) throws IllegalArgumentException {
+    public void save(Integer key, Animal animal) throws IllegalArgumentException {
         repository.add(key, animal);
     }
 

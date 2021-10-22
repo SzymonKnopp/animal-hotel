@@ -1,14 +1,10 @@
 package s175550.animalhotel.entities.owner;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.NoArgsConstructor;
 import s175550.animalhotel.Repository;
-import s175550.animalhotel.Storage;
 
+@NoArgsConstructor
 @org.springframework.stereotype.Repository
 public class OwnerRepository extends Repository<Owner> {
-    @Autowired
-    public OwnerRepository(Storage storage) {
-        super(storage.getOwners());
-    }
 }
