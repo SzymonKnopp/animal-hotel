@@ -1,7 +1,5 @@
 package s175550.animalhotel;
 
-import lombok.AllArgsConstructor;
-
 import java.io.Serializable;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -14,24 +12,25 @@ public class Repository<EntityType extends Serializable> {
         storage = new HashMap<>();
     }
 
-    public void add(Integer key, EntityType entity) throws IllegalArgumentException {
+    public void save(EntityType entity) throws IllegalArgumentException {
+        int key = storage.size();
         if(storage.containsKey(key)) {
             throw new IllegalArgumentException("attempted insertion of duplicate key");
         }
         storage.put(key, entity);
     }
 
-    public Optional<EntityType> get(Integer key) {
+    public Optional<EntityType> findById(Integer key) {
         return Optional.ofNullable(CloningUtility.clone(storage.get(key)));
     }
 
-    public ArrayList<EntityType> getAll() {
+    public ArrayList<EntityType> findAll() {
         ArrayList<EntityType> result = new ArrayList<>();
         storage.values().forEach(item -> result.add(CloningUtility.clone(item)));
         return result;
     }
 
-    public void delete(Integer key) {
+    public void deleteById(Integer key) {
         storage.remove(key);
     }
 
@@ -41,6 +40,6 @@ public class Repository<EntityType extends Serializable> {
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
 
-        if (keysToDelete.size() == 1) this.delete(keysToDelete.get(0));
+        if (keysToDelete.size() == 1) this.deleteById(keysToDelete.get(0));
     }
 }

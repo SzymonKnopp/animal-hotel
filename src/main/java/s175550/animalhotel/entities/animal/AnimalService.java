@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import s175550.animalhotel.Service;
 import s175550.animalhotel.entities.owner.Owner;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,28 +13,24 @@ public class AnimalService implements Service<Animal> {
     private final AnimalRepository repository;
 
     public void save(Animal animal) {
-        this.save(this.getAll().size(), animal);
+        repository.save(animal);
     }
 
-    public void save(Integer key, Animal animal) throws IllegalArgumentException {
-        repository.add(key, animal);
+    public Optional<Animal> find(Integer id) {
+        return repository.findById(id);
     }
 
-    public Optional<Animal> get(Integer key) {
-        return repository.get(key);
+    public List<Animal> findAll() {
+        return repository.findAll();
     }
 
-    public ArrayList<Animal> getAll() {
-        return repository.getAll();
-    }
-
-    public void delete(Integer key) {
-        repository.delete(key);
+    public void delete(Integer id) {
+        repository.deleteById(id);
     }
 
     public void delete(Animal animalToDelete) { repository.delete(animalToDelete);}
 
     public List<Animal> getAllOwnedBy(Owner owner) {
-        return repository.getAllOwnedBy(owner);
+        return repository.getAllByOwner(owner);
     }
 }

@@ -2,16 +2,15 @@ package s175550.animalhotel;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public interface Service<EntityType extends Serializable> {
     void save(EntityType entity);
 
-    void save(Integer key, EntityType entity);
+    Optional<EntityType> find(Integer key);
 
-    Optional<EntityType> get(Integer key);
-
-    ArrayList<EntityType> getAll();
+    List<EntityType> findAll();
 
     void delete(Integer key);
 

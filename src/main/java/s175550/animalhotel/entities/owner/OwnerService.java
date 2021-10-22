@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import s175550.animalhotel.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @org.springframework.stereotype.Service
@@ -12,23 +13,19 @@ public class OwnerService implements Service<Owner> {
     private final OwnerRepository repository;
 
     public void save(Owner owner) {
-        this.save(this.getAll().size(), owner);
+        repository.save(owner);
     }
 
-    public void save(Integer key, Owner owner) throws IllegalArgumentException {
-        repository.add(key, owner);
+    public Optional<Owner> find(Integer id) {
+        return repository.findById(id);
     }
 
-    public Optional<Owner> get(Integer key) {
-        return repository.get(key);
+    public List<Owner> findAll() {
+        return repository.findAll();
     }
 
-    public ArrayList<Owner> getAll() {
-        return repository.getAll();
-    }
-
-    public void delete(Integer key) {
-        repository.delete(key);
+    public void delete(Integer id) {
+        repository.deleteById(id);
     }
 
     public void delete(Owner ownerToDelete) {

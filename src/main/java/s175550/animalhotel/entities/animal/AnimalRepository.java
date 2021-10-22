@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 @org.springframework.stereotype.Repository
 public class AnimalRepository extends Repository<Animal> {
 
-    public List<Animal> getAllOwnedBy(Owner owner) {
-        return this.getAll().stream().filter(animal -> animal.getOwner().equals(owner)).collect(Collectors.toList());
+    public List<Animal> getAllByOwner(Owner owner) {
+        return this.findAll().stream().filter(animal -> animal.getOwner().equals(owner)).collect(Collectors.toList());
     }
 }
