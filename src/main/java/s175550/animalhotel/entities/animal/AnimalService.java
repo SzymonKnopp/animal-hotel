@@ -2,7 +2,6 @@ package s175550.animalhotel.entities.animal;
 
 import lombok.AllArgsConstructor;
 import s175550.animalhotel.Service;
-import s175550.animalhotel.UserInterface;
 import s175550.animalhotel.entities.owner.Owner;
 
 import java.util.ArrayList;
@@ -38,17 +37,5 @@ public class AnimalService implements Service<Animal> {
 
     public List<Animal> getAllOwnedBy(Owner owner) {
         return repository.getAllOwnedBy(owner);
-    }
-
-    public Animal animalFromUI(UserInterface ui) throws NumberFormatException {
-        ArrayList<Animal> animals = this.getAll();
-        for (int i = 0; i < animals.size(); i++) {
-            ui.getPrint().println((i + 1) + " - " + animals.get(i).toString());
-        }
-        int index = Integer.parseInt(ui.getScanner().nextLine()) - 1;
-        if (index < 0 || index >= animals.size()) {
-            throw new NumberFormatException("animal index outside of bounds");
-        }
-        return animals.get(index);
     }
 }

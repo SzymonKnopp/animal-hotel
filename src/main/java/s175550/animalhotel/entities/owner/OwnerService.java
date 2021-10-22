@@ -2,7 +2,6 @@ package s175550.animalhotel.entities.owner;
 
 import lombok.AllArgsConstructor;
 import s175550.animalhotel.Service;
-import s175550.animalhotel.UserInterface;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -34,17 +33,5 @@ public class OwnerService implements Service<Owner> {
 
     public void delete(Owner ownerToDelete) {
         repository.delete(ownerToDelete);
-    }
-
-    public Owner ownerFromUI(UserInterface ui) throws NumberFormatException {
-        ArrayList<Owner> owners = this.getAll();
-        for (int i = 0; i < owners.size(); i++) {
-            ui.getPrint().println((i + 1) + " - " + owners.get(i).toString());
-        }
-        int index = Integer.parseInt(ui.getScanner().nextLine()) - 1;
-        if (index < 0 || index >= owners.size()) {
-            throw new NumberFormatException("owner index outside of bounds");
-        }
-        return owners.get(index);
     }
 }
