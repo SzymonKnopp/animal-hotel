@@ -11,6 +11,7 @@ import s175550.animalhotel.entities.owner.dto.GetOwnerResponse;
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class GetAnimalResponse {
+    private final int id;
     private final String name;
     private final Species species;
     private final Gender gender;
@@ -18,6 +19,7 @@ public class GetAnimalResponse {
 
     public static GetAnimalResponse fromEntity(Animal animalEntity) {
         return new GetAnimalResponse(
+                animalEntity.getId(),
                 animalEntity.getName(),
                 animalEntity.getSpecies(),
                 animalEntity.getGender(),

@@ -2,13 +2,16 @@ package s175550.animalhotel.entities.animal.dto;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import s175550.animalhotel.entities.animal.Animal;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class GetAllAnimalsResponse {
+    @Getter
     @AllArgsConstructor
     private static class SimpleAnimal {
         private final int id;
