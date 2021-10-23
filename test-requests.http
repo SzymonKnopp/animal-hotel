@@ -5,3 +5,25 @@ GET http://localhost:8080/api/owners
 GET http://localhost:8080/api/owners/1
 
 ###
+
+POST http://localhost:8080/api/owners
+Content-Type: application/json
+
+{
+  "name": "Właściciel",
+  "surname": "Nowy",
+  "gender": "MALE"
+}
+
+###
+
+PATCH http://localhost:8080/api/owners/7
+Content-Type: application/json
+
+{
+  "surname": "Jeszczenowszy"
+}
+
+###
+
+DELETE http://localhost:8080/api/owners/7

@@ -21,7 +21,7 @@ import java.util.Scanner;
 public class Owner implements Serializable {
     @ToString.Exclude
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
