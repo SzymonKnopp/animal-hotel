@@ -5,8 +5,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 import s175550.animalhotel.entities.owner.dto.CreateOwnerRequest;
-import s175550.animalhotel.entities.owner.dto.GetAllOwnersResponse;
-import s175550.animalhotel.entities.owner.dto.GetOwnerResponse;
 import s175550.animalhotel.entities.owner.dto.UpdateOwnerRequest;
 
 import java.util.Optional;
@@ -16,24 +14,6 @@ import java.util.Optional;
 @RequestMapping("api/owners")
 public class OwnerController {
     private final OwnerService ownerService;
-
-    @GetMapping
-    public ResponseEntity<GetAllOwnersResponse> getAllOwners() {
-        return ResponseEntity.ok(
-                GetAllOwnersResponse.fromEntities(
-                        ownerService.findAll()
-                )
-        );
-    }
-
-    @GetMapping("{id}")
-    public ResponseEntity<GetOwnerResponse> getOwner(@PathVariable("id") int id) {
-        Optional<Owner> owner = ownerService.find(id);
-
-        return owner.isPresent() ?
-                ResponseEntity.ok(GetOwnerResponse.fromEntity(owner.get())) :
-                ResponseEntity.notFound().build();
-    }
 
     @PostMapping
     public ResponseEntity<Void> createOwner(@RequestBody CreateOwnerRequest request, UriComponentsBuilder builder) {

@@ -6,6 +6,7 @@ import lombok.Getter;
 import s175550.animalhotel.entities.Gender;
 import s175550.animalhotel.entities.animal.Animal;
 import s175550.animalhotel.entities.animal.Species;
+import s175550.animalhotel.entities.owner.dto.ClientGetOwnerResponse;
 import s175550.animalhotel.entities.owner.dto.GetOwnerResponse;
 
 @Getter
@@ -17,13 +18,13 @@ public class GetAnimalResponse {
     private final Gender gender;
     private final GetOwnerResponse owner;
 
-    public static GetAnimalResponse fromEntity(Animal animalEntity) {
+    public static GetAnimalResponse fromEntityAndOwnerResponse(Animal animalEntity, GetOwnerResponse owner) {
         return new GetAnimalResponse(
                 animalEntity.getId(),
                 animalEntity.getName(),
                 animalEntity.getSpecies(),
                 animalEntity.getGender(),
-                GetOwnerResponse.fromEntity(animalEntity.getOwner())
+                owner
         );
     }
 }

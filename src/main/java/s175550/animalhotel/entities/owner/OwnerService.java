@@ -2,6 +2,7 @@ package s175550.animalhotel.entities.owner;
 
 import lombok.AllArgsConstructor;
 import s175550.animalhotel.Service;
+import s175550.animalhotel.entities.owner.dto.GetOwnerResponse;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,6 +11,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class OwnerService implements Service<Owner> {
     private final OwnerRepository repository;
+    private final OwnerRestClient ownerRestClient;
 
     public void save(Owner owner) {
         repository.save(owner);
@@ -29,5 +31,17 @@ public class OwnerService implements Service<Owner> {
 
     public void delete(Owner ownerToDelete) {
         repository.delete(ownerToDelete);
+    }
+
+    public Optional<GetOwnerResponse> fetchFromOwnerServiceById(int id) {
+        return ownerRestClient.getOwnerById(id);
+    }
+
+    public List<Owner> fetchAllFromOwnerService() {
+        return ownerRestClient.getAllOwners().toEntities();
+    }
+
+    public Optional<Owner> findByFullName(String name, String surname) {
+        return repository.findByNameAndSurname(name, surname);
     }
 }

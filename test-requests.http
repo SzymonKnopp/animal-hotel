@@ -1,45 +1,12 @@
-GET http://localhost:8080/api/owners
+GET http://localhost:8082/api/animals
 
 ###
 
-GET http://localhost:8080/api/owners/1
+GET http://localhost:8082/api/animals/1
 
 ###
 
-POST http://localhost:8080/api/owners
-Content-Type: application/json
-
-{
-  "name": "Właściciel",
-  "surname": "Nowy",
-  "gender": "MALE"
-}
-
-###
-
-PATCH http://localhost:8080/api/owners/7
-Content-Type: application/json
-
-{
-  "surname": "Jeszczenowszy"
-}
-
-###
-
-DELETE http://localhost:8080/api/owners/7
-
-###
-###
-
-GET http://localhost:8080/api/animals
-
-###
-
-GET http://localhost:8080/api/animals/1
-
-###
-
-POST http://localhost:8080/api/animals
+POST http://localhost:8082/api/animals
 Content-Type: application/json
 
 {
@@ -51,7 +18,7 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:8080/api/animals/7
+PATCH http://localhost:8082/api/animals/7
 Content-Type: application/json
 
 {
@@ -60,4 +27,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/animals/7
+DELETE http://localhost:8082/api/animals/7
