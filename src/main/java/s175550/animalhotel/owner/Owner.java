@@ -1,24 +1,17 @@
-package s175550.animalhotel.entities.owner;
+package s175550.animalhotel.owner;
 
 import lombok.*;
-import s175550.animalhotel.entities.Gender;
-import s175550.animalhotel.entities.animal.Animal;
 
 import javax.persistence.*;
-import java.io.PrintStream;
-import java.io.Serializable;
-import java.util.List;
-import java.util.Scanner;
 
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 @ToString
-
 @Entity
 @Table(name = "owners")
-public class Owner implements Serializable {
+public class Owner {
     @ToString.Exclude
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,11 +23,6 @@ public class Owner implements Serializable {
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
-
-    @ToString.Exclude
-    @OneToMany(mappedBy = "owner")
-    @Column(name = "owned_animals")
-    private List<Animal> ownedAnimals;
 
 
     private Owner(String name, String surname, Gender gender) {

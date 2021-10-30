@@ -1,9 +1,9 @@
-package s175550.animalhotel.entities.owner.dto;
+package s175550.animalhotel.owner.dto;
 
 import lombok.Builder;
 import lombok.Getter;
-import s175550.animalhotel.entities.Gender;
-import s175550.animalhotel.entities.owner.Owner;
+import s175550.animalhotel.owner.Gender;
+import s175550.animalhotel.owner.Owner;
 
 @Getter
 @Builder

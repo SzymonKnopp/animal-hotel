@@ -1,4 +1,4 @@
-package s175550.animalhotel.entities;
+package s175550.animalhotel.owner;
 
 public enum Gender {
     MALE,

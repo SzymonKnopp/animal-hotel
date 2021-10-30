@@ -1,13 +1,13 @@
-package s175550.animalhotel.entities.owner;
+package s175550.animalhotel.owner;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import s175550.animalhotel.entities.owner.dto.CreateOwnerRequest;
-import s175550.animalhotel.entities.owner.dto.GetAllOwnersResponse;
-import s175550.animalhotel.entities.owner.dto.GetOwnerResponse;
-import s175550.animalhotel.entities.owner.dto.UpdateOwnerRequest;
+import s175550.animalhotel.owner.dto.CreateOwnerRequest;
+import s175550.animalhotel.owner.dto.GetAllOwnersResponse;
+import s175550.animalhotel.owner.dto.GetOwnerResponse;
+import s175550.animalhotel.owner.dto.UpdateOwnerRequest;
 
 import java.util.Optional;
 

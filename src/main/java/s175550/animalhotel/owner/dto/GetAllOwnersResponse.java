@@ -1,10 +1,9 @@
-package s175550.animalhotel.entities.owner.dto;
+package s175550.animalhotel.owner.dto;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.ToString;
-import s175550.animalhotel.entities.owner.Owner;
+import s175550.animalhotel.owner.Owner;
 
 import java.util.List;
 import java.util.stream.Collectors;
