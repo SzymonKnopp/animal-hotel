@@ -1,16 +1,17 @@
-package s175550.animalhotel.entities.owner.dto;
+package s175550.animalhotel.webservices.owners.dto;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import s175550.animalhotel.entities.owner.Owner;
 
 @Getter
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class ClientGetOwnerResponse {
-    private final int id;
-    private final String name;
-    private final String surname;
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public class OwnersGetOwnerResponse {
+    private int id;
+    private String name;
+    private String surname;
 
     public Owner toEntity() {
         return Owner.builder()

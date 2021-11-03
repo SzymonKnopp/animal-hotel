@@ -1,0 +1,315 @@
+GET http://localhost:8082/api/animals/1
+
+<> 2021-11-03T201224.200.json
+
+###
+
+GET http://localhost:8082/api/animals
+
+<> 2021-11-03T201221.200.json
+
+###
+
+GET http://localhost:8081/api/owners
+
+<> 2021-10-30T181317.200.json
+
+###
+
+GET http://localhost:8081/api/owners/1
+
+<> 2021-10-30T181314.200.json
+
+###
+
+GET http://localhost:8081/api/owners
+
+<> 2021-10-30T180648.200.json
+
+###
+
+GET http://localhost:8081/api/owners/1
+
+<> 2021-10-30T180643.200.json
+
+###
+
+GET http://localhost:8080/api/owners/1
+
+###
+
+GET http://localhost:8081/api/owners
+
+<> 2021-10-30T180604.200.json
+
+###
+
+GET http://localhost:8080/api/owners
+
+###
+
+GET http://localhost:8080/api/owners
+
+<> 2021-10-25T154141.200.json
+
+###
+
+GET http://localhost:8080/api/owners/7
+
+<> 2021-10-25T154033.200.json
+
+###
+
+GET http://localhost:8080/api/owners
+
+<> 2021-10-25T154027.200.json
+
+###
+
+POST http://localhost:8080/api/owners
+Content-Type: application/json
+
+{
+  "name": "Właściciel",
+  "surname": "Nowy",
+  "gender": "MALE"
+}
+
+###
+
+GET http://localhost:8080/api/owners/1
+
+<> 2021-10-25T154008.200.json
+
+###
+
+GET http://localhost:8080/api/owners
+
+<> 2021-10-25T153959.200.json
+
+###
+
+GET http://localhost:8080/api/animals
+
+<> 2021-10-23T173812.200.json
+
+###
+
+DELETE http://localhost:8080/api/animals/7
+
+###
+
+GET http://localhost:8080/api/animals/7
+
+###
+
+DELETE http://localhost:8080/api/animals/7
+
+###
+
+GET http://localhost:8080/api/animals/7
+
+<> 2021-10-23T173746.200.json
+
+###
+
+PATCH http://localhost:8080/api/animals/7
+Content-Type: application/json
+
+{
+  "name": "Jeszcze nowsze zwierzątko"
+}
+
+###
+
+GET http://localhost:8080/api/animals/7
+
+<> 2021-10-23T173727.200.json
+
+###
+
+POST http://localhost:8080/api/animals
+Content-Type: application/json
+
+{
+  "name": "Nowe zwierzątko",
+  "species": "WOMBAT",
+  "gender": "MALE",
+  "ownerId": 3
+}
+
+###
+
+GET http://localhost:8080/api/animals/1
+
+<> 2021-10-23T173617.200.json
+
+###
+
+GET http://localhost:8080/api/animals
+
+<> 2021-10-23T173614.200.json
+
+###
+
+GET http://localhost:8080/api/animals/1
+
+<> 2021-10-23T173154.200.json
+
+###
+
+GET http://localhost:8080/api/animals
+
+<> 2021-10-23T173129.200.json
+
+###
+
+GET http://localhost:8080/api/animals
+
+<> 2021-10-23T173037.406.json
+
+###
+
+GET http://localhost:8080/api/animals
+
+<> 2021-10-23T172933.406.json
+
+###
+
+GET http://localhost:8080/api/owners/8
+
+<> 2021-10-23T170525.200.json
+
+###
+
+GET http://localhost:8080/api/owners
+
+<> 2021-10-23T170517.200.json
+
+###
+
+GET http://localhost:8080/api/owners/7
+
+###
+
+GET http://localhost:8080/api/owners
+
+<> 2021-10-23T170502.200.json
+
+###
+
+POST http://localhost:8080/api/owners
+Content-Type: application/json
+
+{
+  "name": "Właściciel",
+  "surname": "Nowy",
+  "gender": 1
+}
+
+###
+
+POST http://localhost:8080/api/owners
+Content-Type: application/json
+
+{
+  "name": "Właściciel",
+  "surname": "Nowy",
+  "gender": "ouf"
+}
+
+<> 2021-10-23T170434.400.json
+
+###
+
+GET http://localhost:8080/api/owners
+
+<> 2021-10-23T170430.200.json
+
+###
+
+DELETE http://localhost:8080/api/owners/7
+
+###
+
+DELETE http://localhost:8080/api/owners/7
+
+###
+
+GET http://localhost:8080/api/owners/7
+
+<> 2021-10-23T170324.200.json
+
+###
+
+PATCH http://localhost:8080/api/owners/7
+Content-Type: application/json
+
+{
+  "surname": "Jeszczenowszy"
+}
+
+###
+
+GET http://localhost:8080/api/owners/7
+
+<> 2021-10-23T170304.200.json
+
+###
+
+GET http://localhost:8080/api/owners
+
+<> 2021-10-23T170215.200.json
+
+###
+
+POST http://localhost:8080/api/owners
+Content-Type: application/json
+
+{
+  "name": "Właściciel",
+  "surname": "Nowy",
+  "gender": "MALE"
+}
+
+###
+
+GET http://localhost:8080/api/owners
+
+<> 2021-10-23T170207.200.json
+
+###
+
+GET http://localhost:8080/api/owners
+
+<> 2021-10-23T170018.200.json
+
+###
+
+POST http://localhost:8080/api/owners
+Content-Type: application/json
+
+{
+  "name": "Właściciel",
+  "surname": "Nowy",
+  "gender": "MALE"
+}
+
+###
+
+GET http://localhost:8080/api/owners/1
+
+<> 2021-10-23T165935.200.json
+
+###
+
+GET http://localhost:8080/api/owners
+
+<> 2021-10-23T165928.200.json
+
+###
+
+GET http://localhost:8080/api/owners
+
+###
+

@@ -8,7 +8,7 @@ import s175550.animalhotel.entities.animal.dto.GetAllAnimalsResponse;
 import s175550.animalhotel.entities.animal.dto.CreateAnimalRequest;
 import s175550.animalhotel.entities.animal.dto.GetAnimalResponse;
 import s175550.animalhotel.entities.animal.dto.UpdateAnimalRequest;
-import s175550.animalhotel.entities.owner.dto.GetOwnerResponse;
+import s175550.animalhotel.webservices.owners.dto.OwnersGetOwnerResponse;
 
 import java.util.Optional;
 
@@ -36,7 +36,7 @@ public class AnimalController {
         }
 
         Animal animal = animalOptional.get();
-        Optional<GetOwnerResponse> ownerResponseOptional =
+        Optional<OwnersGetOwnerResponse> ownerResponseOptional =
                 animalService.fetchFromOwnerServiceById(animal.getOwner().getId());
 
         if (ownerResponseOptional.isEmpty()) {

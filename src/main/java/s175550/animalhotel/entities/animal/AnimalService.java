@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import s175550.animalhotel.Service;
 import s175550.animalhotel.entities.owner.Owner;
 import s175550.animalhotel.entities.owner.OwnerService;
-import s175550.animalhotel.entities.owner.dto.GetOwnerResponse;
+import s175550.animalhotel.webservices.owners.dto.OwnersGetOwnerResponse;
 
 import java.util.List;
 import java.util.Optional;
@@ -46,7 +46,7 @@ public class AnimalService implements Service<Animal> {
         };
     }
 
-    public Optional<GetOwnerResponse> fetchFromOwnerServiceById(int id) {
+    public Optional<OwnersGetOwnerResponse> fetchFromOwnerServiceById(int id) {
         return ownerService.fetchFromOwnerServiceById(id);
     }
 }
