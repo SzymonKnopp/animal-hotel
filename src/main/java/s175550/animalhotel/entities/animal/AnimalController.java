@@ -8,6 +8,7 @@ import s175550.animalhotel.entities.animal.dto.GetAllAnimalsResponse;
 import s175550.animalhotel.entities.animal.dto.CreateAnimalRequest;
 import s175550.animalhotel.entities.animal.dto.GetAnimalResponse;
 import s175550.animalhotel.entities.animal.dto.UpdateAnimalRequest;
+import s175550.animalhotel.entities.owner.dto.GetOwnerResponse;
 
 import java.util.Optional;
 
@@ -28,11 +29,22 @@ public class AnimalController {
 
     @GetMapping("{id}")
     public ResponseEntity<GetAnimalResponse> getAnimal(@PathVariable("id") int id) {
-        Optional<Animal> animal = animalService.find(id);
+        Optional<Animal> animalOptional = animalService.find(id);
 
-        return animal.isPresent() ?
-                ResponseEntity.ok(GetAnimalResponse.fromEntity(animal.get())) :
-                ResponseEntity.notFound().build();
+        if (animalOptional.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        Animal animal = animalOptional.get();
+        Optional<GetOwnerResponse> ownerResponseOptional =
+                animalService.fetchFromOwnerServiceById(animal.getOwner().getId());
+
+        if (ownerResponseOptional.isEmpty()) {
+            return ResponseEntity.internalServerError().build();
+        }
+
+        return ResponseEntity.ok(GetAnimalResponse.fromEntityAndOwnerResponse(animal, ownerResponseOptional.get()));
+
     }
 
     @PostMapping
