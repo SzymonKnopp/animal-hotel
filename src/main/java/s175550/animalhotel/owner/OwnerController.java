@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
+import s175550.animalhotel.webservices.animals.AnimalsRestClient;
 import s175550.animalhotel.owner.dto.CreateOwnerRequest;
 import s175550.animalhotel.owner.dto.GetAllOwnersResponse;
 import s175550.animalhotel.owner.dto.GetOwnerResponse;
@@ -16,6 +17,7 @@ import java.util.Optional;
 @RequestMapping("api/owners")
 public class OwnerController {
     private final OwnerService ownerService;
+    private final AnimalsRestClient animalsRestClient;
 
     @GetMapping
     public ResponseEntity<GetAllOwnersResponse> getAllOwners() {
@@ -39,6 +41,7 @@ public class OwnerController {
     public ResponseEntity<Void> createOwner(@RequestBody CreateOwnerRequest request, UriComponentsBuilder builder) {
         Owner newOwner = request.toEntity();
         ownerService.save(newOwner);
+        animalsRestClient.createOwner(newOwner);
         return ResponseEntity.created(builder.pathSegment("api", "owners", "{id}")
                 .buildAndExpand(newOwner.getId()).toUri()).build();
     }
@@ -51,6 +54,7 @@ public class OwnerController {
         }
         else {
             ownerService.save(request.updatedOwner(original.get()));
+            animalsRestClient.updateOwner(id, request);
             return ResponseEntity.accepted().build();
         }
     }
@@ -63,6 +67,7 @@ public class OwnerController {
         }
         else {
             ownerService.delete(id);
+            animalsRestClient.deleteOwner(id);
             return ResponseEntity.ok().build();
         }
     }
