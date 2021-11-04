@@ -46,7 +46,7 @@ public class OwnerController {
                 .buildAndExpand(newOwner.getId()).toUri()).build();
     }
 
-    @PatchMapping("{id}")
+    @PutMapping("{id}")
     public ResponseEntity<Void> updateOwner(@PathVariable("id") int id, @RequestBody UpdateOwnerRequest request) {
         Optional<Owner> original = ownerService.find(id);
         if (original.isEmpty()) {

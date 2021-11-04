@@ -24,11 +24,7 @@ public class AnimalsRestClient {
     }
 
     public void updateOwner(int id, UpdateOwnerRequest updateRequest) {
-        animalsWebserviceClient.patchForObject(
-            "/owners/" + id,
-            AnimalsUpdateOwnerRequest.fromUpdateDto(updateRequest),
-            void.class
-        );
+        animalsWebserviceClient.put("/owners/" + id, AnimalsUpdateOwnerRequest.fromUpdateDto(updateRequest));
     }
 
     public void deleteOwner(int id) {

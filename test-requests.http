@@ -17,7 +17,7 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:8081/api/owners/8
+PUT http://localhost:8081/api/owners/1
 Content-Type: application/json
 
 {
@@ -26,4 +26,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8081/api/owners/7
+DELETE http://localhost:8081/api/owners/1
