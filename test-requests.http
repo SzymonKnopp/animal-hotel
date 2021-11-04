@@ -18,7 +18,7 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:8082/api/animals/7
+PUT http://localhost:8082/api/animals/7
 Content-Type: application/json
 
 {
@@ -31,4 +31,4 @@ DELETE http://localhost:8082/api/animals/7
 
 ###
 
-GET http://localhost:8082/api/owners/8
+GET http://localhost:8082/api/owners/1

@@ -1,3 +1,37 @@
+GET http://localhost:8082/api/animals
+
+<> 2021-11-04T110006.200.json
+
+###
+
+GET http://localhost:8082/api/animals/1
+
+###
+
+GET http://localhost:8082/api/animals/1
+
+<> 2021-11-04T105945.200.json
+
+###
+
+GET http://localhost:8082/api/animals/1
+
+<> 2021-11-04T105921.200.json
+
+###
+
+GET http://localhost:8082/api/owners/1
+
+<> 2021-11-04T105639.200.json
+
+###
+
+GET http://localhost:8082/api/owners/1
+
+<> 2021-11-04T105611.200.json
+
+###
+
 GET http://localhost:8082/api/owners/8
 
 <> 2021-11-04T104619.200.json
@@ -253,42 +287,6 @@ Content-Type: application/json
 GET http://localhost:8080/api/animals/1
 
 <> 2021-10-23T173617.200.json
-
-###
-
-GET http://localhost:8080/api/animals
-
-<> 2021-10-23T173614.200.json
-
-###
-
-GET http://localhost:8080/api/animals/1
-
-<> 2021-10-23T173154.200.json
-
-###
-
-GET http://localhost:8080/api/animals
-
-<> 2021-10-23T173129.200.json
-
-###
-
-GET http://localhost:8080/api/animals
-
-<> 2021-10-23T173037.406.json
-
-###
-
-GET http://localhost:8080/api/animals
-
-<> 2021-10-23T172933.406.json
-
-###
-
-GET http://localhost:8080/api/owners/8
-
-<> 2021-10-23T170525.200.json
 
 ###
 

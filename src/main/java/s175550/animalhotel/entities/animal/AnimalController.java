@@ -46,7 +46,7 @@ public class AnimalController {
                 .buildAndExpand(newAnimal.getId()).toUri()).build();
     }
 
-    @PatchMapping("{id}")
+    @PutMapping("{id}")
     public ResponseEntity<Void> updateAnimal(@PathVariable("id") int id, @RequestBody UpdateAnimalRequest request) {
         Optional<Animal> original = animalService.find(id);
         if (original.isEmpty()) {
