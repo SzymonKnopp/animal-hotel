@@ -17,7 +17,7 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:8081/api/owners/7
+PATCH http://localhost:8081/api/owners/8
 Content-Type: application/json
 
 {
