@@ -3,7 +3,6 @@ package s175550.animalhotel.entities.owner;
 import lombok.AllArgsConstructor;
 import s175550.animalhotel.Service;
 import s175550.animalhotel.webservices.owners.OwnerRestClient;
-import s175550.animalhotel.webservices.owners.dto.OwnersGetOwnerResponse;
 
 import java.util.List;
 import java.util.Optional;
@@ -32,10 +31,6 @@ public class OwnerService implements Service<Owner> {
 
     public void delete(Owner ownerToDelete) {
         repository.delete(ownerToDelete);
-    }
-
-    public Optional<OwnersGetOwnerResponse> fetchFromOwnerServiceById(int id) {
-        return ownerRestClient.getOwnerById(id);
     }
 
     public List<Owner> fetchAllFromOwnerService() {

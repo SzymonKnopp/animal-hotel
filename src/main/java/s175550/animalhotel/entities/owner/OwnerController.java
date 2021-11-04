@@ -5,15 +5,27 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 import s175550.animalhotel.entities.owner.dto.CreateOwnerRequest;
+import s175550.animalhotel.entities.owner.dto.GetOwnerResponse;
 import s175550.animalhotel.entities.owner.dto.UpdateOwnerRequest;
 
 import java.util.Optional;
 
+//these endpoints should not be accessible through gateway, owner management in owners webservice
 @RestController
 @AllArgsConstructor
 @RequestMapping("api/owners")
 public class OwnerController {
     private final OwnerService ownerService;
+
+    // only for testing purposes
+    @GetMapping("{id}")
+    public ResponseEntity<GetOwnerResponse> getOwner(@PathVariable("id") int id) {
+        Optional<Owner> owner = ownerService.find(id);
+
+        return owner.isPresent() ?
+                ResponseEntity.ok(GetOwnerResponse.fromEntity(owner.get())) :
+                ResponseEntity.notFound().build();
+    }
 
     @PostMapping
     public ResponseEntity<Void> createOwner(@RequestBody CreateOwnerRequest request, UriComponentsBuilder builder) {
@@ -23,7 +35,7 @@ public class OwnerController {
                 .buildAndExpand(newOwner.getId()).toUri()).build();
     }
 
-    @PatchMapping("{id}")
+    @PatchMapping("{id}") //TODO: doesn't work
     public ResponseEntity<Void> updateOwner(@PathVariable("id") int id, @RequestBody UpdateOwnerRequest request) {
         Optional<Owner> original = ownerService.find(id);
         if (original.isEmpty()) {

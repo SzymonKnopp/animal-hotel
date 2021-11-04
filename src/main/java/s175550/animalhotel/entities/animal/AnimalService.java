@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import s175550.animalhotel.Service;
 import s175550.animalhotel.entities.owner.Owner;
 import s175550.animalhotel.entities.owner.OwnerService;
-import s175550.animalhotel.webservices.owners.dto.OwnersGetOwnerResponse;
 
 import java.util.List;
 import java.util.Optional;
@@ -44,9 +43,5 @@ public class AnimalService implements Service<Animal> {
             if (owner.isEmpty()) throw new IllegalArgumentException("owner with desired id not found");
             return owner.get();
         };
-    }
-
-    public Optional<OwnersGetOwnerResponse> fetchFromOwnerServiceById(int id) {
-        return ownerService.fetchFromOwnerServiceById(id);
     }
 }
