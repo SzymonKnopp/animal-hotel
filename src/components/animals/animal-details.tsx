@@ -1,7 +1,5 @@
 import {useEffect, useState} from "react";
-import {useLocation, useNavigate} from "react-router-dom"
-import Header from "../../style-components/header";
-import Table from "../../style-components/table";
+import {useLocation, useNavigate} from "react-router-dom";
 import {Animal} from "../../rest/animals/contract";
 import {serviceGetAnimal} from "../../rest/animals/functions";
 
@@ -24,8 +22,8 @@ export default function AnimalDetails() {
 
     return (
         <>
-            <Header>Animal details</Header>
-            <Table>
+            <h3>Animal details</h3>
+            <table>
                 <tr>
                     <th>Name</th>
                     <td>{animal?.name}</td>
@@ -42,7 +40,7 @@ export default function AnimalDetails() {
                     <th>Owner</th>
                     <td>{animal?.owner.name + " " + animal?.owner.surname}</td>
                 </tr>
-            </Table>
+            </table>
             <button onClick={() => goBackToOwnerDetails()}>Return</button>
         </>
     );

@@ -2,8 +2,6 @@ import {useEffect, useState} from "react";
 import {useLocation, useNavigate} from "react-router-dom"
 import {Owner} from "../../rest/owners/contract";
 import {serviceGetOwner} from "../../rest/owners/functions";
-import Header from "../../style-components/header";
-import Table from "../../style-components/table";
 import OwnedAnimalsList from "../animals/owned-animals-list";
 
 export default function OwnerDetails() {
@@ -23,8 +21,8 @@ export default function OwnerDetails() {
 
     return (
         <>
-            <Header>Owner details</Header>
-            <Table>
+            <h3>Owner details</h3>
+            <table>
                 <tr>
                     <th>Name</th>
                     <td>{owner?.name}</td>
@@ -37,7 +35,7 @@ export default function OwnerDetails() {
                     <th>Gender</th>
                     <td>{owner?.gender}</td>
                 </tr>
-            </Table>
+            </table>
             <br/>
             <OwnedAnimalsList owner={owner}/>
             <button onClick={() => goBackToOwnerList()}>Return</button>

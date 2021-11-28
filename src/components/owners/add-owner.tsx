@@ -3,7 +3,6 @@ import {useNavigate} from "react-router-dom";
 import {CreateOwnerRequest} from "../../rest/owners/contract";
 import {Gender} from "../../rest/common/contract";
 import {serviceCreateOwner} from "../../rest/owners/functions";
-import Header from "../../style-components/header";
 
 export default function AddOwner() {
     const navigate = useNavigate();
@@ -16,7 +15,7 @@ export default function AddOwner() {
 
     return (
         <>
-            <Header>Add owner</Header>
+            <h3>Add owner</h3>
             Name:
             <input
             type="text"

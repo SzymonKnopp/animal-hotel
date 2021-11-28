@@ -1,7 +1,6 @@
 import {useLocation, useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {Gender} from "../../rest/common/contract";
-import Header from "../../style-components/header";
 import {CreateAnimalRequest, Species} from "../../rest/animals/contract";
 import {serviceGetAnimal, serviceUpdateAnimal} from "../../rest/animals/functions";
 
@@ -30,7 +29,7 @@ export default function EditAnimal() {
 
     return (
         <>
-            <Header>Edit animal</Header>
+            <h3>Edit animal</h3>
             Name:
             <input
                 type="text"

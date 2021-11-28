@@ -2,8 +2,6 @@ import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom"
 import {AllOwners} from "../../rest/owners/contract";
 import {serviceDeleteOwner, serviceGetAllOwners} from "../../rest/owners/functions";
-import Header from "../../style-components/header";
-import Table from "../../style-components/table";
 
 export default function OwnersList() {
     const navigate = useNavigate();
@@ -31,8 +29,8 @@ export default function OwnersList() {
 
     return (
         <>
-            <Header>Owners</Header>
-            <Table>
+            <h3>Owners</h3>
+            <table>
                 <tr>
                     <th>Name</th>
                     <th>Surname</th>
@@ -46,7 +44,7 @@ export default function OwnersList() {
                         <td><button onClick={() => deleteOwner(owner.id)}>delete</button></td>
                     </tr>
                 ))}
-            </Table>
+            </table>
             <button onClick={() => openAddOwnerView()}>Add owner</button>
         </>
     );

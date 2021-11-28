@@ -3,7 +3,6 @@ import {useEffect, useState} from "react";
 import {CreateOwnerRequest} from "../../rest/owners/contract";
 import {Gender} from "../../rest/common/contract";
 import {serviceGetOwner, serviceUpdateOwner} from "../../rest/owners/functions";
-import Header from "../../style-components/header";
 
 export default function EditOwner() {
     const navigate = useNavigate();
@@ -24,7 +23,7 @@ export default function EditOwner() {
 
     return (
         <>
-            <Header>Edit owner</Header>
+            <h3>Edit owner</h3>
             Name:
             <input
                 type="text"

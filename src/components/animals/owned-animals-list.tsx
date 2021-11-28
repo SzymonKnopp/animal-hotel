@@ -1,6 +1,4 @@
 import {Owner} from "../../rest/owners/contract";
-import Header from "../../style-components/header";
-import Table from "../../style-components/table";
 import {serviceDeleteAnimal, serviceGetAllAnimals, serviceGetAnimal} from "../../rest/animals/functions";
 import {useEffect, useState} from "react";
 import {AllAnimals} from "../../rest/animals/contract";
@@ -37,9 +35,9 @@ export default function OwnedAnimalsList({owner}: {owner: Owner | null}) {
 
     return (
         <>
-            <Header>Owned animals</Header>
+            <h3>Owned animals</h3>
             {animals.length > 0 ? (
-                <Table>
+                <table>
                     <tr>
                         <th>Name</th>
                     </tr>
@@ -51,7 +49,7 @@ export default function OwnedAnimalsList({owner}: {owner: Owner | null}) {
                             <td><button onClick={() => deleteAnimal(animal.id)}>delete</button></td>
                         </tr>
                     ))}
-                </Table>
+                </table>
             ) : (
                 <>
                     <i>none</i>
