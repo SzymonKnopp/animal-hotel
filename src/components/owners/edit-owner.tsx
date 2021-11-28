@@ -22,8 +22,6 @@ export default function EditOwner() {
         navigate("/owners");
     }
 
-
-
     return (
         <>
             <Header>Edit owner</Header>
@@ -49,7 +47,7 @@ export default function EditOwner() {
             Gender:
             <select
                 value={form.gender}
-                onChange={event => setForm({...form, gender: Gender[event.target.value as "MALE" | "FEMALE"]})}>
+                onChange={event => setForm({...form, gender: Gender[event.target.value as Gender]})}>
                 <option value="MALE">Male</option>
                 <option value="FEMALE">Female</option>
             </select>

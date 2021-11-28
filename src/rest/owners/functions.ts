@@ -9,8 +9,7 @@ export async function serviceGetAllOwners(): Promise<AllOwners> {
 
 export async function serviceGetOwner(id: number): Promise<Owner> {
     return fetch(`${REST_GATEWAY_URL}/owners/${id}`)
-        .then(response => response.json())
-        .then(json => {console.log(json); return json});
+        .then(response => response.json());
 }
 
 export async function serviceCreateOwner(newOwner: CreateOwnerRequest) {
